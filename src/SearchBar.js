@@ -18,7 +18,7 @@ export default class SearchBar extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    
+    this.props.setResults({"uwu": "owo"});
   }
 
 
