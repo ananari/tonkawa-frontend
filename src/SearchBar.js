@@ -8,7 +8,7 @@ const postObj = {
     "accept": "application/json"
   }
 }
-const searchURL = "https://shielded-earth-11285.herokuapp.com/search"
+const searchURL = "http://localhost:3000/search"
 
 export default class SearchBar extends Component {
 
@@ -17,6 +17,7 @@ export default class SearchBar extends Component {
     this.state = {
       query: "",
       language: "",
+      searchtype: "plain",
       results: {}
     };
   }
@@ -29,7 +30,7 @@ export default class SearchBar extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    postObj.body = JSON.stringify({query: this.state.query, language: this.state.language})
+    postObj.body = JSON.stringify({query: this.state.query, language: this.state.language, searchtype: this.state.searchtype})
     fetch(searchURL, postObj)
     .then(res => res.json())
     .then(json => {
@@ -50,6 +51,10 @@ export default class SearchBar extends Component {
                   <option value="either">Choose language</option>
                   <option value="english">English</option>
                   <option value="tonkawa">Tonkawa</option>
+                </select>
+                <select name="searchtype" onChange={event => this.handleChange(event)}>
+                  <option value="plain">Plain search</option>
+                  <option value="regex">Regex</option>
                 </select>
                 <input type="submit" value="Search" />
               </div>
