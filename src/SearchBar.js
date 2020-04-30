@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './SearchBar.css';
 
-const getObj = {
-  method: "GET",
+const postbj = {
+  method: "POST",
   headers: {
     "content-type": "application/json",
     "accept": "application/json"
@@ -28,7 +28,7 @@ export default class SearchBar extends Component {
   handleSubmit = event => {
     event.preventDefault();
     getObj.body = JSON.stringify({query: this.state.query})
-    fetch(searchURL, getObj)
+    fetch(searchURL, postObj)
     .then(res => res.json())
     .then(json => {
       this.props.setResults({results: json})
