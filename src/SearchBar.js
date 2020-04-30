@@ -8,7 +8,7 @@ const postObj = {
     "accept": "application/json"
   }
 }
-const searchURL = "http://localhost:3000/"
+const searchURL = "http://localhost:3000/search"
 
 export default class SearchBar extends Component {
 
