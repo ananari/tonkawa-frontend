@@ -5,7 +5,9 @@ import SearchBar from './SearchBar';
 
 function App() {
   return (
-    <p>Hello world!</p>
+    <div>
+      <SearchBar />
+    </div>
   );
 }
 
