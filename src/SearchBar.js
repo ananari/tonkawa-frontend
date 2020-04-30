@@ -1,6 +1,15 @@
 import React, {Component} from 'react';
 import './SearchBar.css';
 
+const getObj = {
+  method: "GET",
+  headers: {
+    "content-type": "application/json",
+    "accept": "application/json"
+  }
+}
+const searchURL = "https://shielded-earth-11285.herokuapp.com/search"
+
 export default class SearchBar extends Component {
 
   constructor(){
@@ -18,7 +27,13 @@ export default class SearchBar extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.setResults({"uwu": "owo"});
+    getObj.body = JSON.stringify({query: this.state.query})
+    fetch(searchURL, getObj)
+    .then(res => res.json())
+    .then(json => {
+      this.props.setResults({results: json})
+    })
+    .catch(error => console.log(error))
   }
 
 
