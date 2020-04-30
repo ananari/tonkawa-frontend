@@ -16,6 +16,7 @@ export default class SearchBar extends Component {
     super();
     this.state = {
       query: "",
+      language: "",
       results: {}
     };
   }
@@ -44,6 +45,11 @@ export default class SearchBar extends Component {
               <div>
                 <label>Search term </label>
                 <input type="text" name="query" onChange={event => this.handleChange(event)} value={this.state.query} placeholder="Search here" />
+                <select name="language" onChange={event => this.handleChange(event)}>
+                  <option value="either"></option>
+                  <option value="english">English</option>
+                  <option value="tonkawa">Tonkawa</option>
+                </select>
                 <input type="submit" value="Search" />
               </div>
           </form>
