@@ -8,7 +8,7 @@ const postObj = {
     "accept": "application/json"
   }
 }
-const searchURL = "https://shielded-earth-11285.herokuapp.com/search"
+const searchURL = "http://localhost:3000/"
 
 export default class SearchBar extends Component {
 
