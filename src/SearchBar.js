@@ -24,7 +24,6 @@ export default class SearchBar extends Component {
   render(){
     return(
       <div className="searchbar">
-        <div>
           <form onSubmit={event => this.handleSubmit(event)}>
               <div>
                 <label>Search term </label>
@@ -32,7 +31,6 @@ export default class SearchBar extends Component {
                 <input type="submit" value="Search" />
               </div>
           </form>
-        </div>
       </div>
     )
   }
