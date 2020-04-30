@@ -24,11 +24,12 @@ export default class SearchBar extends Component {
   handleChange = event => {
     event.persist();
     this.setState({[event.target.name]: event.target.value})
+    console.log(this.state.language)
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    postObj.body = JSON.stringify({query: this.state.query})
+    postObj.body = JSON.stringify({query: this.state.query, language: this.state.language})
     fetch(searchURL, postObj)
     .then(res => res.json())
     .then(json => {
@@ -46,7 +47,7 @@ export default class SearchBar extends Component {
                 <label>Search term </label>
                 <input type="text" name="query" onChange={event => this.handleChange(event)} value={this.state.query} placeholder="Search here" />
                 <select name="language" onChange={event => this.handleChange(event)}>
-                  <option value="either"></option>
+                  <option value="either">Choose language</option>
                   <option value="english">English</option>
                   <option value="tonkawa">Tonkawa</option>
                 </select>
