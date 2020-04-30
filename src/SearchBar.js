@@ -6,7 +6,8 @@ export default class SearchBar extends Component {
   constructor(){
     super();
     this.state = {
-      query: ""
+      query: "",
+      results: {}
     };
   }
 
@@ -17,7 +18,7 @@ export default class SearchBar extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log("you did it!")
+    
   }
 
 
