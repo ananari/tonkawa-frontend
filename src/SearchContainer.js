@@ -19,6 +19,7 @@ export default class SearchContainer extends Component {
     return(
       <div>
         <SearchBar setResults={this.setResults} />
+        <SearchResults />
       </div>
     )
   }
