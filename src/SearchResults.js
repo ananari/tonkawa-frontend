@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 export default class SearchResults extends Component {
 
   componentDidUpdate(){
-    console.log(`results compoment has props of ${this.props}`)
+    console.log(this.props.results)
   }
 
   render(){
