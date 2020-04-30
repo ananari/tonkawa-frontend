@@ -20,7 +20,7 @@ export default class SearchContainer extends Component {
     return(
       <div>
         <SearchBar setResults={this.setResults} />
-        <SearchResults />
+        <SearchResults results={this.state.results}/>
       </div>
     )
   }
