@@ -11,16 +11,19 @@ export default class SearchContainer extends Component {
   }
 
   setResults = results => {
-    console.log(results);
-    this.setState({results: results});
+    await this.setState({results: results});
     console.log("state has been set");
+  }
+
+  componentDidUpdate(){
+    console.log(this.state)
   }
 
   render(){
     return(
       <div>
         <SearchBar setResults={this.setResults} />
-        <SearchResults results={this.state.results}/>
+        <SearchResults results={this.state.results} />
       </div>
     )
   }
