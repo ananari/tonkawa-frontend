@@ -4,6 +4,7 @@ export default class SearchResults extends Component {
 
   componentDidUpdate(){
     console.log(this.props.results)
+    console.log(this.props.results.length)
   }
 
   render(){
