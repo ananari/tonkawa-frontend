@@ -6,7 +6,7 @@ export default class SearchContainer extends Component {
   constructor(){
     super();
     this.state = {
-      results: {}
+      results: []
     };
   }
 

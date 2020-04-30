@@ -31,7 +31,7 @@ export default class SearchBar extends Component {
     fetch(searchURL, postObj)
     .then(res => res.json())
     .then(json => {
-      this.props.setResults({results: json})
+      this.props.setResults(json)
     })
     .catch(error => console.log(error))
   }

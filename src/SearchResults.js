@@ -4,7 +4,7 @@ export default class SearchResults extends Component {
 
   componentDidUpdate(){
     console.log(this.props.results)
-    console.log(this.props.results.length)
+    console.log(this.props.results.results)
   }
 
   render(){
@@ -13,7 +13,7 @@ export default class SearchResults extends Component {
         <ul>
           {this.props.results.map(word => {
             return(
-              <li>word.name</li>
+            <li>{word.name} - {word.definition}</li>
             )
           })}
         </ul>
