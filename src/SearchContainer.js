@@ -11,7 +11,7 @@ export default class SearchContainer extends Component {
   }
 
   setResults = results => {
-    await this.setState({results: results});
+    this.setState({results: results});
     console.log("state has been set");
   }
 
