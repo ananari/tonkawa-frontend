@@ -24,13 +24,15 @@ export default class SearchBar extends Component {
   render(){
     return(
       <div className="searchbar">
-        <form onSubmit={event => this.handleSubmit(event)}>
-            <div>
-              <label>Search term </label>
-              <input type="text" name="query" onChange={event => this.handleChange(event)} value={this.state.query} placeholder="Search here" />
-              <input type="submit" value="Search" />
-            </div>
-        </form>
+        <div>
+          <form onSubmit={event => this.handleSubmit(event)}>
+              <div>
+                <label>Search term </label>
+                <input type="text" name="query" onChange={event => this.handleChange(event)} value={this.state.query} placeholder="Search here" />
+                <input type="submit" value="Search" />
+              </div>
+          </form>
+        </div>
       </div>
     )
   }
