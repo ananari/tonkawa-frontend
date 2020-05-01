@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 export default class SearchResults extends Component {
 
-  componentDidUpdate(){
-    console.log(this.props.results)
-    console.log(this.props.results.results)
-  }
 
   render(){
     if(this.props.results.length > 0){
@@ -13,7 +10,7 @@ export default class SearchResults extends Component {
         <ul>
           {this.props.results.map(word => {
             return(
-            <li>{word.name} - {word.definition}</li>
+            <li key={word.id}><Link to={`/${word.id}`}>{word.name} - {word.definition}</Link></li>
             )
           })}
         </ul>

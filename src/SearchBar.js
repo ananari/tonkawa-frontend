@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import './SearchBar.css';
 
 const postObj = {
@@ -12,8 +13,8 @@ const searchURL = "https://shielded-earth-11285.herokuapp.com/search"
 
 export default class SearchBar extends Component {
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       query: "",
       language: "",
@@ -25,7 +26,6 @@ export default class SearchBar extends Component {
   handleChange = event => {
     event.persist();
     this.setState({[event.target.name]: event.target.value})
-    console.log(this.state.language)
   }
 
   handleSubmit = event => {
