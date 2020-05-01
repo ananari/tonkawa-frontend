@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {withRouter, Link} from 'react-router-dom';
 
 
-const wordurl = id => `http://localhost:3000/words/${id}`;
+const wordurl = id => `https://shielded-earth-11285.herokuapp.com/words/${id}`;
 
 class Word extends Component {
 
